@@ -8,7 +8,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       overlay = final: prev: {
         userid = final.callCabal2nix "userid" ./. { };
-        userid = userid;
       };
       myHaskellPackages = pkgs.haskellPackages.extend overlay;
     in
